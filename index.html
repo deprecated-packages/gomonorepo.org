@@ -1,1 +1,84 @@
-It works!
+---
+---
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Go Monorepo - All You Ever Wanted to Know About Monorepos but Were Afraid to Ask</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Bree+Serif:300,400,600">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="/assets/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>
+                        @todo
+                    </h1>
+
+                    <br>
+
+                    <h3>What is monorepo?</h3>
+
+                    <p>@todo</p>
+
+                    <h3>Synonymous and Terms</h3>
+
+                    <p>@todo</p>
+
+                    <h3>Why go monorepo?</h3>
+
+                    <p>@todo</p>
+
+                    <h3>When not to go monorepo?</h3>
+
+                    <p>@todo</p>
+
+                    <h3>Pros and cons of monorepo</h3>
+
+                    <p>@todo</p>
+
+                    <br>
+
+                    <hr>
+
+                    <h3>Happy Monorepo Projects</h3>
+
+                    <table class="table" style="max-width: 35em; margin:auto;">
+                        <tr>
+                            <th class="text-center">Project</th>
+                            <th class="text-center">Since</th>
+                        </tr>
+                        {% for project in site.data.projects %}
+                        <tr>
+                            <td>
+                                <a href="{{ project.url }}">{{ project.name }}</a>
+                            </td>
+                            <td>{{ project.when }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+                    <br>
+                    <br>
+
+                    <p>Are you <strong>missing your monorepo</strong>?</p>
+                    <p>
+                        <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml" class="btn btn-success">
+                            ➕ &nbsp;ADD IT
+                        </a>
+                    </p>
+
+                    <footer>
+                        Thanks for inspiration at <a href="http://gophp71.org/">goPHP71.org</a>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
