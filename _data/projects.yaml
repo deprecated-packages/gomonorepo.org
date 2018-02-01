@@ -1,4 +1,12 @@
 - name: Symplify
   url: https://github.com/Symplify/Symplify
-  since: 2015
+  since: 2016
 
+# private at the moment
+#- name: Shopsys
+#  url: https://github.com/shopsys/shopsys
+#  since: 2018
+
+- name: Symfony
+  url: https://github.com/symfony/symfony
+  since: forever
