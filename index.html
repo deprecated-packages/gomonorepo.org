@@ -15,123 +15,119 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center">
-                        All You Always Wanted to Know About Monorepo<br>
-                        But Were Afraid to Ask
-                    </h1>
+            <h1 class="text-center">
+                All You Always Wanted to Know About Monorepo<br>
+                But Were Afraid to Ask
+            </h1>
 
-                    <p class="text-center">🐘 PHP friendly ❤️️</p>
+            <p class="text-center">🐘 PHP friendly ❤️️</p>
 
-                    <hr class="mt-5 mb-5">
+            <hr class="mt-5 mb-5">
 
-                    <h2>What is monorepo?</h2>
+            <h2>What is monorepo?</h2>
 
-                    <p>@todo</p>
+            <p>@todo</p>
 
-                    <h2>Monorepo Adoption</h2>
 
-                    <p>
-                        Monorepo is already widely by adopted by companies like Google, Facebook, Twitter, Foursquare and <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">languages like Java, C++ or JavaScript</a>
-                    </p>
+            <h2>Terms</h2>
 
-                    <h2>Synonymous and Terms</h2>
+            <ul>
+                <li><strong>monolith</strong> - monolith is not a monorepo, but rather a huge amount of coupled code of 1 application</li>
+                <li><strong>monolithic</strong> repository - repository with many packages</li>
+                <li><strong>manyrepo</strong> - approach, when every package/project is developed in it's own repository</li>
+            </ul>
 
-                    <ul>
-                        <li><strong>monolith</strong> - monolith is not a monorepo, but rather a huge amount of coupled code of 1 application</li>
-                        <li><strong>monolithic</strong> repository - repository with many packages</li>
-                        <li><strong>manyrepo</strong> - approach, when every package/project is developed in it's own repository</li>
-                    </ul>
+            <h2>Why go monorepo?</h2>
 
-                    <p>@todo</p>
+            <blockquote class="blockquote">"My point isn’t that you should definitely switch to a monorepo; it’s merely that using a monorepo isn’t totally unreasonable, that folks at places like Google, Facebook, Twitter, Digital Ocean, and Etsy might have good reasons for preferring a monorepo over hundreds or thousands or tens of thousands of smaller repos."
+                <footer class="blockquote-footer text-right">
+                    Dan Luu in <cite title="Advantages of Monolithic Version Control">Advantages of Monolithic Version Control</cite>
+                </footer>
+            </blockquote>
 
-                    <h2>Why go monorepo?</h2>
+            <table class="table">
+                <thead>
+                    <tr class="row text-center">
+                        <th class="col-md-6">Pros</th>
+                        <th class="col-md-6">Cons</th>
+                    </tr>
+                </thead>
+                <tr class="row">
+                    <td class="col-md-6">
+                        <ul>
+                            <li>single point of entry for any change</li>
+                            <li>ready for <a href="https://www.tomasvotruba.cz/blog/2017/10/30/what-can-you-learn-from-menstruation-and-symfony-releases/">periodic releases</a></li>
+                            <li>united tagging</li>
+                            <li>simpler upgrading by end user</li>
+                            <li>ready for double-layer testing</li>
+                        </ul>
+                    </td>
+                    <td class="col-md-6">
+                        <ul>
+                            <li>
+                                when you prefer asynchronous package tagging
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
 
-                    <blockquote class="blockquote">"My point isn’t that you should definitely switch to a monorepo; it’s merely that using a monorepo isn’t totally unreasonable, that folks at places like Google, Facebook, Twitter, Digital Ocean, and Etsy might have good reasons for preferring a monorepo over hundreds or thousands or tens of thousands of smaller repos."
-                        <footer class="blockquote-footer text-right">
-                            Dan Luu in <cite title="Advantages of Monolithic Version Control">Advantages of Monolithic Version Control</cite>
-                        </footer>
-                    </blockquote>
+            <hr>
 
-                    <table class="table">
-                        <thead>
-                            <tr class="row text-center">
-                                <th class="col-md-6">Pros</th>
-                                <th class="col-md-6">Cons</th>
-                            </tr>
-                        </thead>
-                        <tr class="row">
-                            <td class="col-md-6">
-                                <ul>
-                                    <li>single point of entry for any change</li>
-                                    <li>ready for <a href="https://www.tomasvotruba.cz/blog/2017/10/30/what-can-you-learn-from-menstruation-and-symfony-releases/">periodic releases</a></li>
-                                    <li>united tagging</li>
-                                    <li>simpler upgrading by end user</li>
-                                    <li>ready for double-layer testing</li>
-                                </ul>
-                            </td>
-                            <td class="col-md-6">
-                                <ul>
-                                    <li>
-                                        when you prefer asynchronous package tagging
-                                    </li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </table>
+            <h2>Happy Monorepo Projects</h2>
 
-                    <hr>
+            <table class="table table-striped" style="max-width: 35em; margin:auto;">
+                <thead>
+                    <tr>
+                        <th class="text-center">Project</th>
+                        <th class="text-center">Since</th>
+                    </tr>
+                </thead>
+                {% for project in site.data.projects %}
+                    <tr>
+                        <td>
+                            <a href="{{ project.url }}">{{ project.name }}</a>
+                        </td>
+                        <td>{{ project.since }}</td>
+                    </tr>
+                {% endfor %}
 
-                    <h2>Happy Monorepo Projects</h2>
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml">
+                            ➕ &nbsp;Add Your Project
+                        </a>
+                    </td>
+                </tr>
+            </table>
 
-                    <table class="table table-bordered" style="max-width: 35em; margin:auto;">
-                        <thead>
-                            <tr>
-                                <th class="text-center">Project</th>
-                                <th class="text-center">Since</th>
-                            </tr>
-                        </thead>
-                        {% for project in site.data.projects %}
-                            <tr>
-                                <td>
-                                    <a href="{{ project.url }}">{{ project.name }}</a>
-                                </td>
-                                <td>{{ project.when }}</td>
-                            </tr>
-                        {% endfor %}
+            <h2>Read On</h2>
 
-                        <tr>
-                            <td colspan="2" class="text-center">
-                                <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml">
-                                    ➕ &nbsp;Add Project
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
+            <ul>
+                <li><a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a> (2014) - the best source on the Internet</li>
+                <li><a href="https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9">Monorepos in the Wild</a> (2017)</li>
+            </ul>
 
-                    <h2>Read On</h2>
+            <h2>Tools for Monorepos</h2>
 
-                    <ul>
-                        <li><a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a> (2014) - the best source on the Internet</li>
-                        <li><a href="https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9">Monorepos in the Wild</a> (2017)</li>
-                    </ul>
+            <ul>
+                <li><a href="https://github.com/Symplify/Monorepo">Symplify\Monorepo</a> - description</li>
+                <li><a href="https://github.com/dflydev/git-subsplit">git-subsplit</a> - description</li>
+                <li><a href="https://github.com/korfuri/awesome-monorepo">awesome-monorepo</a> - description</li>
+            </ul>
 
-                    <h2>Tools for Monorepos</h2>
+            <br>
 
-                    <ul>
-                        <li><a href="https://github.com/Symplify/Monorepo">Symplify\Monorepo</a> - description</li>
-                        <li><a href="https://github.com/dflydev/git-subsplit">git-subsplit</a> - description</li>
-                        <li><a href="https://github.com/korfuri/awesome-monorepo">awesome-monorepo</a> - description</li>
-                    </ul>
+            <h2>Fun Facts</h2>
 
-                    <br>
+            <p>
+                Monorepo is widely by adopted by companies like Google, Facebook, Twitter, Foursquare and <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">languages like Java, C++ or JavaScript</a>.
+            </p>
 
-                    <footer>
-                        Thanks for inspiration at <a href="http://gophp71.org/">goPHP71.org</a>
-                    </footer>
-                </div>
-            </div>
+
+            <footer>
+                Thanks for inspiration at <a href="http://gophp71.org/">goPHP71.org</a>
+            </footer>
         </div>
     </body>
 </html>
