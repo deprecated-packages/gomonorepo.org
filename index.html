@@ -24,57 +24,41 @@
 
             <hr class="mt-5 mb-5">
 
-            <h2>What is monorepo?</h2>
+            <h2>What is Monorepo?</h2>
 
-            <p>@todo</p>
-
-
-            <h2>Terms</h2>
-
-            <ul>
-                <li><strong>monolith</strong> - monolith is not a monorepo, but rather a huge amount of coupled code of 1 application</li>
-                <li><strong>monolithic</strong> repository - repository with many packages</li>
-                <li><strong>manyrepo</strong> - approach, when every package/project is developed in it's own repository</li>
-            </ul>
-
-            <h2>Why go monorepo?</h2>
-
-            <blockquote class="blockquote">"My point isn’t that you should definitely switch to a monorepo; it’s merely that using a monorepo isn’t totally unreasonable, that folks at places like Google, Facebook, Twitter, Digital Ocean, and Etsy might have good reasons for preferring a monorepo over hundreds or thousands or tens of thousands of smaller repos."
-                <footer class="blockquote-footer text-right">
-                    Dan Luu in <cite title="Advantages of Monolithic Version Control">Advantages of Monolithic Version Control</cite>
-                </footer>
-            </blockquote>
-
-            <table class="table">
-                <thead>
-                    <tr class="row text-center">
-                        <th class="col-md-6">Pros</th>
-                        <th class="col-md-6">Cons</th>
-                    </tr>
-                </thead>
-                <tr class="row">
-                    <td class="col-md-6">
-                        <ul>
-                            <li>single point of entry for any change</li>
-                            <li>ready for <a href="https://www.tomasvotruba.cz/blog/2017/10/30/what-can-you-learn-from-menstruation-and-symfony-releases/">periodic releases</a></li>
-                            <li>united tagging</li>
-                            <li>simpler upgrading by end user</li>
-                            <li>ready for double-layer testing</li>
-                        </ul>
-                    </td>
-                    <td class="col-md-6">
-                        <ul>
-                            <li>
-                                when you prefer asynchronous package tagging
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
-            </table>
+            <p class="text-center">
+                <a href="https://developer.atlassian.com/blog/2015/10/monorepos-in-git/">Definitions may vary</a>,
+                but the most simple and precise one would be:
+                <br>
+                <strong>a repository that contains multiple projects, that are usually related</strong>.
+            </p>
 
             <hr>
 
-            <h2>Happy Monorepo Projects</h2>
+            <h2>Terms</h2>
+
+
+            <ul>
+                <li><strong>monolith</strong> - monolith is not a monorepo, but rather a huge amount of coupled code of 1 application, e.g. your proprietary-application</li>
+                <li><strong>monorepo = monolithic repository</strong> - repository with many packages, e.g. Symfony</li>
+                <li><strong>many-repo</strong> - approach, when every package is developed in it's own repository, e.g. Doctrine, Zend or Nette</li>
+                <li><strong>single-repo</strong> - repository the monorepo is split into, e.g. Symfony\Console</li>
+            </ul>
+
+            <hr>
+
+            <h2>Why go Monorepo?</h2>
+
+            <p>
+                <a href="https://danluu.com/">Dan Luu</a> already wrote it all in his post <a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a>:
+            </p>
+
+            <blockquote class="blockquote">"My point isn’t that you should definitely switch to a monorepo; it’s merely that using a monorepo isn’t totally unreasonable, that folks at places like Google, Facebook, Twitter, Digital Ocean, and Etsy might have good reasons for preferring a monorepo over hundreds or thousands or tens of thousands of smaller repos."
+            </blockquote>
+
+            <hr>
+
+            <h2>Happy Monorepo PHP Projects</h2>
 
             <table class="table table-striped" style="max-width: 35em; margin:auto;">
                 <thead>
@@ -95,37 +79,34 @@
                 <tr>
                     <td colspan="2" class="text-center">
                         <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml">
-                            ➕ &nbsp;Add Your Project
+                            ➕ &nbsp;Add Your Awesome Project Too!
                         </a>
                     </td>
                 </tr>
             </table>
 
-            <h2>Read On</h2>
+            <hr>
+
+            <h2>What to Read or Use</h2>
 
             <ul>
-                <li><a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a> (2014) - the best source on the Internet</li>
                 <li><a href="https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9">Monorepos in the Wild</a> (2017)</li>
+                <li><a href="https://github.com/Symplify/Monorepo">Symplify\Monorepo</a> - PHP tool to build and split monorepos</li>
+                <li><a href="https://github.com/babel/babel/blob/master/doc/design/monorepo.md#why-is-babel-a-monorepo">Why is Babel a monorepo?</a> - nice, clear and short reasoning about Github repository design decission</li>
+
+                <li><a href="https://github.com/dflydev/git-subsplit">git-subsplit</a> - handy git plugin for monorepo split to single repo</li>
+                <li><a href="https://github.com/korfuri/awesome-monorepo">awesome-monorepo</a> - collection of sources and tools for monorepo</li>
             </ul>
 
-            <h2>Tools for Monorepos</h2>
-
-            <ul>
-                <li><a href="https://github.com/Symplify/Monorepo">Symplify\Monorepo</a> - description</li>
-                <li><a href="https://github.com/dflydev/git-subsplit">git-subsplit</a> - description</li>
-                <li><a href="https://github.com/korfuri/awesome-monorepo">awesome-monorepo</a> - description</li>
-            </ul>
-
-            <br>
+            <hr>
 
             <h2>Fun Facts</h2>
 
             <p>
-                Monorepo is widely by adopted by companies like Google, Facebook, Twitter, Foursquare and <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">languages like Java, C++ or JavaScript</a>.
+                Monorepo used for ages by companies like Google, Facebook, Twitter, Foursquare and <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">languages like Java, C++ or JavaScript</a>. Yet PHP is waiting for its monorepo hype in 2018.
             </p>
 
-
-            <footer>
+            <footer class="text-center mt-5 mb-5">
                 Thanks for inspiration at <a href="http://gophp71.org/">goPHP71.org</a>
             </footer>
         </div>

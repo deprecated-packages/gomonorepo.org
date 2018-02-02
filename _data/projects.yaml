@@ -1,12 +1,20 @@
-- name: Symplify
-  url: https://github.com/Symplify/Symplify
-  since: 2016
+# put newest to the top
 
 # private at the moment
 #- name: Shopsys
 #  url: https://github.com/shopsys/shopsys
 #  since: 2018
 
+- name: Symplify
+  url: https://github.com/Symplify/Symplify
+  since: 2016
+
+- name: Laravel
+  url: https://github.com/laravel/framework
+  since: forever
+
 - name: Symfony
   url: https://github.com/symfony/symfony
   since: forever
+
+# put oldest to the bottom

@@ -1,5 +1,5 @@
 html, body {
-    font-size: 16px;
+    font-size: 17px;
 }
 
 body {
@@ -22,7 +22,7 @@ h1 {
 
 h2 {
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: 1.4em;
     margin-top: 1.5em;
     font-size: 1.8em;
 }
@@ -51,4 +51,17 @@ strong {
 
 .blockquote {
     font-size: 1.2em;
+}
+
+li {
+    line-height: 1.7em;
+}
+
+footer, footer a {
+    font-size: .9em;
+    color: #999;
+}
+
+hr {
+    margin-top: 3em;
 }
