@@ -1,4 +1,4 @@
-# put newest to the top
+# put the newest to the top
 
 # private at the moment
 #- name: Shopsys
@@ -17,4 +17,4 @@
   url: https://github.com/symfony/symfony
   since: forever
 
-# put oldest to the bottom
+# put the oldest to the bottom
