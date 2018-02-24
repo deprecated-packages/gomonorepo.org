@@ -9,9 +9,14 @@
   url: https://github.com/Symplify/Symplify
   since: 2016
 
+- name: Sylius
+  url: https://github.com/Sylius/Sylius
+  since: forever 
+  
 - name: Laravel
   url: https://github.com/laravel/framework
   since: forever
+ 
 
 - name: Symfony
   url: https://github.com/symfony/symfony
