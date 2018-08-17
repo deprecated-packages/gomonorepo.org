@@ -1,5 +1,9 @@
 # put the newest to the top
 
+- name: Contao
+  url: https://github.com/contao/contao
+  since: 2018
+
 - name: Shopsys
   url: https://github.com/shopsys/shopsys
   since: 2018
