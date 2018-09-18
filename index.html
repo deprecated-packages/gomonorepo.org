@@ -16,7 +16,8 @@
     <body>
         <div class="container">
             <h1 class="text-center">
-                All You Always Wanted to Know About Monorepo<br>
+                All You Always Wanted to Know About <br>
+                Monorepo<br>
                 But Were Afraid to Ask
             </h1>
 
@@ -24,101 +25,94 @@
 
             <hr class="mt-5 mb-5">
 
-            <a href="#what-is-monorepo">
-                <h2 id="what-is-monorepo">What is Monorepo?</h2>
-            </a>
+            <h2>What is Monorepo?</h2>
 
-            <p class="text-center">
-                <a href="https://developer.atlassian.com/blog/2015/10/monorepos-in-git/">Definitions may vary</a>,
-                but the most simple and precise one would be:
-                <br>
-                <strong>a repository that contains multiple projects, that are usually related</strong>.
+            <div class="text-center">
+                <p class="bigger">
+                    A repository that contains multiple packages or projects. Those projects can, but don't have to be related. The most famous monorepos in PHP are&nbsp;<a href="https://github.com/symfony/symfony">Symfony repository</a>,
+                    {% for project in site.data.projects %}<a href="{{ project.url }}">{{ project.name }} repository</a> {% if loop.last == false %}, {% else %}.{% endif %}{% endfor %}
+                </p>
+
+                <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml" class="btn btn-success mt-1 mb-3">
+                    Add Your Monorepo Too!
+                </a>
+
+                <p class="bigger">
+                    Outside PHP world the monorepo is used by <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">Google, Facebook, Twitter and Foursquare</a>.
+                </p>
+            </div>
+
+            <hr>
+
+            <h2>Monorepo vs. Multirepo</h2>
+
+            <h3>Single-repo or split-repo</h3>
+            <p>Monorepo is split into many single-repos, e.g. Symfony/Symfony is split into Symfony/Console, Symfony/Validator etc. The single-repo repository is read-only. You can change its code via pull-request to the monorepo.</p>
+
+            <h3>Many-repo</h3>
+            <p>
+                The other approach to manage multiple repositories. 1 package = 1 own repository. Each package has it's own development, tagging and even maintainers. E.g. <a href="https://github.com/doctrine/">Doctrine 2</a> or <a href="https://github.com/nette">Nette 2</a>.
             </p>
 
-            <hr>
-
-            <a href="#terms">
-                <h2 id="terms">Terms</h2>
-            </a>
-
-            <ul>
-                <li><strong>monolith</strong> - monolith is not a monorepo, but rather a huge amount of coupled code of 1 application, e.g. your proprietary-application</li>
-                <li><strong>monorepo = monolithic repository</strong> - repository with many packages, e.g. Symfony</li>
-                <li><strong>many-repo</strong> - approach, when every package is developed in it's own repository, e.g. Doctrine, Zend or Nette</li>
-                <li><strong>single-repo</strong> - repository the monorepo is split into, e.g. Symfony\Console</li>
-            </ul>
+            <h3>Monolith</h3>
+            <p>Monolith ≠ monorepo. Monolith is huge amount of coupled code of 1 application that is hell to maintain.</p>
 
             <hr>
 
-            <a href="#why-go-monorepo">
-                <h2 id="why-go-monorepo">Why go Monorepo?</h2>
-            </a>
+            <h2>Why is Monorepo so Awesome?</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li>Simplified organization</li>
+                        <li>Easy to coordinate changes across modules.</li>
+                        <li>Simplified dependencies</li>
+                        <li>Single lint, build, test and release process</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Tooling</li>
+                        <li>Single place to report issues</li>
+                        <li>Cross-project changes</li>
+                        <li>Tests across modules are run together → finds bugs that touch multiple modules easier</li>
+                    </ul>
+                </div>
+            </div>
 
             <p>
-                <a href="https://danluu.com/">Dan Luu</a> already wrote it all in his post <a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a>:
+                Cherry-picked reasons from legendary <a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a> and <a href="https://github.com/babel/babel/blob/master/doc/design/monorepo.md#why-is-babel-a-monorepo">Why is Babel a monorepo?</a>. Read them to get deeper insight.
             </p>
 
-            <blockquote class="blockquote">
-                "My point isn’t that you should definitely switch to a monorepo; it’s merely that using a monorepo isn’t totally unreasonable, that folks at places like Google, Facebook, Twitter, Digital Ocean, and Etsy might have good reasons for preferring a monorepo over hundreds or thousands or tens of thousands of smaller repos."
-            </blockquote>
-
             <hr>
 
-            <a href="#happy-monorepo-php-projects">
-                <h2 id="happy-monorepo-php-projects">Happy Monorepo PHP Projects</h2>
-            </a>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Tools for You</h2>
 
-            <table class="table table-striped" style="max-width: 35em; margin:auto;">
-                <thead>
-                    <tr>
-                        <th class="text-center">Project</th>
-                        <th class="text-center">Since</th>
-                    </tr>
-                </thead>
-                {% for project in site.data.projects %}
-                    <tr>
-                        <td>
-                            <a href="{{ project.url }}">{{ project.name }}</a>
-                        </td>
-                        <td>{{ project.since }}</td>
-                    </tr>
-                {% endfor %}
+                    <ul>
+                        <li><a href="https://github.com/symplify/monorepobuilder">Symplify/MonorepoBuilder</a> - init, setup and auto-split monorepo in minutes</li>
+                        <li><a href="https://github.com/shopsys/monorepo-tools">shopsys/monorepo-tools</a> - merges history of multiple repos to one and more</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h2>Learn More</h2>
 
-                <tr>
-                    <td colspan="2" class="text-center">
-                        <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml">
-                            ➕ &nbsp;Add Your Awesome Project Too!
-                        </a>
-                    </td>
-                </tr>
-            </table>
+                    <ul>
+                        <li><a href="https://www.tomasvotruba.cz/clusters/#monorepo-from-zero-to-hero">Monorepo: From Zero to Hero</a> (2018)</li>
+                        <li><a href="https://dl.acm.org/citation.cfm?id=2854146">Why Google stores billions of lines of code in a single repository</a> (2016)</li>
+                        <li><a href="https://developer.atlassian.com/blog/2015/10/monorepos-in-git/">Monorepos in Git</a> (2015)</li>
+                        <li><a href="https://github.com/korfuri/awesome-monorepo">korfuri/awesome-monorepo</a> - collection of the best sources and tools for monorepo</li>
 
-            <hr>
+                    </ul>
+                </div>
+            </div>
 
-            <a href="#what-to-read-or-use">
-                <h2 id="what-to-read-or-use">What to Read or Use</h2>
-            </a>
-
-            <ul>
-                <li><a href="https://medium.com/@maoberlehner/monorepos-in-the-wild-33c6eb246cb9">Monorepos in the Wild</a> (2017)</li>
-                <li><a href="https://github.com/shopsys/monorepo-tools">shopsys/monorepo-tools</a> - tools to build and split monorepos from existing repositories</li>
-                <li><a href="https://github.com/babel/babel/blob/master/doc/design/monorepo.md#why-is-babel-a-monorepo">Why is Babel a monorepo?</a> - nice, clear and short reasoning about Github repository design decission</li>
-                <li><a href="https://github.com/symplify/monorepobuilder">Monorepo Builder</a> - handy composer package for automated monorepo split to single repo</li>
-                <li><a href="https://github.com/korfuri/awesome-monorepo">awesome-monorepo</a> - collection of sources and tools for monorepo</li>
-            </ul>
-
-            <hr>
-
-            <a href="#fun-facts">
-                <h2 id="fun-facts">Fun Facts</h2>
-            </a>
-
-            <p>
-                Monorepo has been used for ages by companies like Google, Facebook, Twitter, Foursquare and <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">languages like Java, C++ or JavaScript</a>. Yet PHP is waiting for its monorepo hype in 2018.
-            </p>
+            <br>
 
             <footer class="text-center mt-5 mb-5">
-                Thanks for inspiration at <a href="http://gophp71.org/">goPHP71.org</a><br>
+                Made by <a href="https://www.tomasvotruba.com">Tomas Votruba</a> with ❤️️ & ☕️
+                <br>
                 Found a typo? <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/index.html">Edit this page</a>
             </footer>
         </div>

@@ -1,31 +1,29 @@
-# put the newest to the top
+# put the newest to the bottom
+-
+    name: Laravel
+    url: https://github.com/laravel/framework
 
-- name: Contao
-  url: https://github.com/contao/contao
-  since: 2018
+-
+    name: Symplify
+    url: https://github.com/Symplify/Symplify
 
-- name: Shopsys
-  url: https://github.com/shopsys/shopsys
-  since: 2018
+-
+    name: Sylius
+    url: https://github.com/Sylius/Sylius
 
-- name: Symplify
-  url: https://github.com/Symplify/Symplify
-  since: 2016
+-
+    name: Yii2
+    url: https://github.com/yiisoft/yii2
 
-- name: Yii2
-  url: https://github.com/yiisoft/yii2
-  since: forever # guess
+-
+    name: Shopsys
+    url: https://github.com/shopsys/shopsys
 
-- name: Sylius
-  url: https://github.com/Sylius/Sylius
-  since: forever 
-  
-- name: Laravel
-  url: https://github.com/laravel/framework
-  since: forever
+-
+    name: Contao
+    url: https://github.com/contao/contao
 
-- name: Symfony
-  url: https://github.com/symfony/symfony
-  since: forever
-
-# put the oldest to the bottom
+# just copy and add
+#-
+#  name: YourProject
+#  url: https://github.com/your-project/your-project
