@@ -11,7 +11,7 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="/assets/style.css?v=0.3">
+        <link rel="stylesheet" href="/assets/style.css?v=0.4">
     </head>
     <body>
         <div class="container">
@@ -29,13 +29,10 @@
 
             <div class="text-center">
                 <p class="bigger">
-                    A repository that contains multiple packages or projects. Those projects can, but don't have to be related. The most famous monorepos in PHP are&nbsp;<a href="https://github.com/symfony/symfony">Symfony repository</a>,
-                    {% for project in site.data.projects %}<a href="{{ project.url }}">{{ project.name }} repository</a> {% if loop.last == false %}, {% else %}.{% endif %}{% endfor %}
+                    A repository that contains multiple packages or projects. Those projects can, but don't have to be related. The most famous monorepos in PHP are&nbsp;<a href="https://github.com/symfony/symfony">Symfony</a>,
+                    {% for project in site.data.projects %}<a href="{{ project.url }}">{{ project.name }}</a> | {% endfor %}
+                    <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml" class="btn btn-success mt-1 mb-3">Add Yours Too!</a>
                 </p>
-
-                <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml" class="btn btn-success mt-1 mb-3">
-                    Add Your Monorepo Too!
-                </a>
 
                 <p class="bigger">
                     Outside PHP world the monorepo is used by <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">Google, Facebook, Twitter and Foursquare</a>.
