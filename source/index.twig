@@ -1,5 +1,3 @@
----
----
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,9 +7,9 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bree+Serif:300,400,600">
 
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="/assets/style.css?v=0.6">
+        <link rel="stylesheet" href="/assets/style.css?v={{ random }}">
     </head>
     <body>
         <div class="container">
@@ -29,14 +27,19 @@
 
             <div class="text-center">
                 <p class="bigger">
-                    A repository that contains multiple packages or projects. Those projects can, but don't have to be related. Outside PHP world the monorepo is used by <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">Google, Facebook, Twitter and Foursquare</a>.
-                </p>
-                <p class="bigger">
-                    The most famous monorepos in PHP are&nbsp;<a href="https://github.com/symfony/symfony">Symfony</a>,
-                    {% for project in site.data.projects %}<a href="{{ project.url }}">{{ project.name }}</a>, {% endfor %}
+                    A repository that contains multiple packages or projects. Those projects can, but don't have to be related. Most famous monorepo pioneers are <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">Google, Facebook and Twitter</a>.
                 </p>
 
-                <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml" class="btn btn-success mt-4 mb-3">Add Yours Too!</a>
+                <p class="bigger mt-4">
+                    The most famous monorepos in PHP are&nbsp;<a href="https://github.com/symfony/symfony">Symfony</a>,
+
+                    {% for project in projects %}
+                        {% if loop.last %}and{% endif %}
+                        <a href="{{ project.url }}">{{ project.name }}</a>{% if loop.index < (length(contributors) - 1) %}, {% endif %}{% if loop.last %}.{% endif %}
+                    {% endfor %}
+                </p>
+
+                <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/source/_data/projects.yaml" class="btn btn-success mt-4 mb-3">Add Yours</a>
             </div>
 
             <hr>
@@ -78,7 +81,7 @@
             </div>
 
             <p>
-                Cherry-picked reasons from legendary <a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a> and <a href="https://github.com/babel/babel/blob/master/doc/design/monorepo.md#why-is-babel-a-monorepo">Why is Babel a monorepo?</a>. Read them to get deeper insight.
+                These are cherry-picked reasons from legendary <a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a> and <a href="https://github.com/babel/babel/blob/master/doc/design/monorepo.md#why-is-babel-a-monorepo">Why is Babel a monorepo?</a> Read them to get deeper insight.
             </p>
 
             <hr>
@@ -88,19 +91,19 @@
                     <h2>Tools for You</h2>
 
                     <ul>
-                        <li><a href="https://github.com/symplify/monorepobuilder">Symplify/MonorepoBuilder</a> - init, setup and auto-split monorepo in minutes</li>
-                        <li><a href="https://github.com/shopsys/monorepo-tools">shopsys/monorepo-tools</a> - merges history of multiple repos to one and more</li>
+                        {% for tool in tools %}
+                            <li><a href="{{ tool.url }}">{{ tool.name }}</a> - {{ tool.description }}</li>
+                        {% endfor %}
                     </ul>
                 </div>
+
                 <div class="col-md-6">
                     <h2>Learn More</h2>
 
                     <ul>
-                        <li><a href="https://www.tomasvotruba.cz/clusters/#monorepo-from-zero-to-hero">Monorepo: From Zero to Hero</a> (2018)</li>
-                        <li><a href="https://dl.acm.org/citation.cfm?id=2854146">Why Google stores billions of lines of code in a single repository</a> (2016)</li>
-                        <li><a href="https://developer.atlassian.com/blog/2015/10/monorepos-in-git/">Monorepos in Git</a> (2015)</li>
-                        <li><a href="https://github.com/korfuri/awesome-monorepo">korfuri/awesome-monorepo</a> - collection of the best sources and tools for monorepo</li>
-
+                        {% for learn_more in learn_mores %}
+                            <li><a href="{{ learn_more.url }}">{{ learn_more.name }}</a></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -108,20 +111,12 @@
             <br>
 
             <footer class="text-center mt-5 mb-5">
-                Made by <a href="https://www.tomasvotruba.com">Tomas Votruba</a> with ❤️️ & ☕️
+                Made with ❤️ on️ <a href="https://www.statie.org">Statie</a> by <a href="https://tomasvotruba.com">Tomas Votruba</a> and️️ ☕️
                 <br>
-                Found a typo? <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/index.html">Edit this page</a>
+                <a href="https://github.com/TomasVotruba/gomonorepo.org/">Look inside</a>
             </footer>
         </div>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131306432-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-131306432-1');
-        </script>
+        {% include "_snippets/footer.twig" %}
     </body>
 </html>

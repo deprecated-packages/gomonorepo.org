@@ -1,0 +1,17 @@
+parameters:
+    learn_mores:
+        -
+            name: "Monorepo: From Zero to Hero (2018)"
+            url: "https://www.tomasvotruba.cz/clusters/#monorepo-from-zero-to-hero"
+
+        -
+            name: "Why Google stores billions of lines of code in a single repository (2016)"
+            url: "https://dl.acm.org/citation.cfm?id=2854146"
+
+        -
+            name: "Monorepos in Git (2015)"
+            url: "https://developer.atlassian.com/blog/2015/10/monorepos-in-git/"
+
+        -
+            name: "korfuri/awesome-monorepo"
+            url: "https://github.com/korfuri/awesome-monorepo"
