@@ -1,0 +1,10 @@
+parameters:
+    tools:
+        -
+            name: "Symplify/MonorepoBuilder"
+            url: "https://github.com/symplify/monorepobuilder"
+            description: "init, setup and auto-split monorepo in minutes - great for start from scratch"
+        -
+            name: "shopsys/monorepo-tools"
+            url: "https://github.com/shopsys/monorepo-tools"
+            description: "merges history of multiple repos to one and more - great for start for code with many repositories with long history"

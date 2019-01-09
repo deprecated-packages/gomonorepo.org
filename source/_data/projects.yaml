@@ -1,9 +1,26 @@
 parameters:
-    projects: # available in *.twig files as "{{ projects }}"
-        https://statie.org: "Statie"
-        https://github.com/rectorphp/rector: "Rector"
-        https://github.com/Symplify/EasyCodingStandard: "Easy Coding Standard"
-        https://pehapkari.cz: "Pehapkari"
-        https://friendsofphp.org: "Friends of PHP"
-        https://gomonorepo.org: "Go Monorepo"
-        https://gophp71.org/: "Go PHP 7.1"
+    projects:
+        # put the newest to the bottom
+        -
+            name: Laravel
+            url: https://github.com/laravel/framework
+
+        -
+            name: Symplify
+            url: https://github.com/Symplify/Symplify
+
+        -
+            name: Sylius
+            url: https://github.com/Sylius/Sylius
+
+        -
+            name: Yii2
+            url: https://github.com/yiisoft/yii2
+
+        -
+            name: Shopsys
+            url: https://github.com/shopsys/shopsys
+
+        -
+            name: Contao
+            url: https://github.com/contao/contao
