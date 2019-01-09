@@ -27,14 +27,19 @@
 
             <div class="text-center">
                 <p class="bigger">
-                    A repository that contains multiple packages or projects. Those projects can, but don't have to be related. Outside PHP world the monorepo is used by <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">Google, Facebook, Twitter and Foursquare</a>.
-                </p>
-                <p class="bigger">
-                    The most famous monorepos in PHP are&nbsp;<a href="https://github.com/symfony/symfony">Symfony</a>,
-                    {% for project in site.data.projects %}<a href="{{ project.url }}">{{ project.name }}</a>, {% endfor %}
+                    A repository that contains multiple packages or projects. Those projects can, but don't have to be related. Most famous monorepo pioneers are <a href="https://github.com/korfuri/awesome-monorepo/blob/master/README.md#build-systems--dependency-management-tools">Google, Facebook and Twitter</a>.
                 </p>
 
-                <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/_data/projects.yaml" class="btn btn-success mt-4 mb-3">Add Yours Too!</a>
+                <p class="bigger mt-4">
+                    The most famous monorepos in PHP are&nbsp;<a href="https://github.com/symfony/symfony">Symfony</a>,
+
+                    {% for project in projects %}
+                        {% if loop.last %}and{% endif %}
+                        <a href="{{ project.url }}">{{ project.name }}</a>{% if loop.index < (length(contributors) - 1) %}, {% endif %}{% if loop.last %}.{% endif %}
+                    {% endfor %}
+                </p>
+
+                <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/source/_data/projects.yaml" class="btn btn-success mt-4 mb-3">Add Yours</a>
             </div>
 
             <hr>
@@ -76,7 +81,7 @@
             </div>
 
             <p>
-                Cherry-picked reasons from legendary <a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a> and <a href="https://github.com/babel/babel/blob/master/doc/design/monorepo.md#why-is-babel-a-monorepo">Why is Babel a monorepo?</a>. Read them to get deeper insight.
+                These are cherry-picked reasons from legendary <a href="https://danluu.com/monorepo/">Advantages of Monolithic Version Control</a> and <a href="https://github.com/babel/babel/blob/master/doc/design/monorepo.md#why-is-babel-a-monorepo">Why is Babel a monorepo?</a> Read them to get deeper insight.
             </p>
 
             <hr>
@@ -106,9 +111,9 @@
             <br>
 
             <footer class="text-center mt-5 mb-5">
-                Made with ❤️ on️ <a href="https://www.statie.org">Statie</a> by <a href="https://www.tomasvotruba.com">Tomas Votruba</a> and️️ ☕️
+                Made with ❤️ on️ <a href="https://www.statie.org">Statie</a> by <a href="https://tomasvotruba.com">Tomas Votruba</a> and️️ ☕️
                 <br>
-                <a href="https://github.com/TomasVotruba/gomonorepo.org/edit/master/source/index.twig">Look inside</a>
+                <a href="https://github.com/TomasVotruba/gomonorepo.org/">Look inside</a>
             </footer>
         </div>
 

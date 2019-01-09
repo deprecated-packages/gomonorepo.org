@@ -1,3 +1,6 @@
+imports:
+    - { resource: "source/_data/*.yaml" }
+
 # see https://www.statie.org/docs/configuration/ for more
 parameters:
     google_analytics_tracking_id: 'UA-131306432-1'
