@@ -33,9 +33,10 @@
                 <p class="bigger mt-4">
                     The most famous monorepos in PHP are&nbsp;<a href="https://github.com/symfony/symfony">Symfony</a>,
 
+                    {% set project_count_sep = length(projects) - 1 %}
                     {% for project in projects %}
                         {% if loop.last %}and{% endif %}
-                        <a href="{{ project.url }}">{{ project.name }}</a>{% if loop.index < (length(contributors) - 1) %}, {% endif %}{% if loop.last %}.{% endif %}
+                        <a href="{{ project.url }}">{{ project.name }}</a>{% if loop.index < project_count_sep %}, {% endif %}{% if loop.last %}.{% endif %}
                     {% endfor %}
                 </p>
 
