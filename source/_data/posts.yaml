@@ -15,3 +15,6 @@ parameters:
         -
             name: "korfuri/awesome-monorepo"
             url: "https://github.com/korfuri/awesome-monorepo"
+        -
+            name: "The issue of monorepo and polyrepo in large enterprises"
+            url: "https://dl.acm.org/citation.cfm?id=3328435"
