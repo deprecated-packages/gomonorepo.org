@@ -8,3 +8,7 @@ parameters:
             name: "shopsys/monorepo-tools"
             url: "https://github.com/shopsys/monorepo-tools"
             description: "merges history of multiple repos to one and more - great for start for code with many repositories with long history"
+        -
+            name: "beberlei/composer-monorepo-plugin"
+            url: "https://github.com/beberlei/composer-monorepo-plugin"
+            description: "manage composer autoloading with external and internal dependencies when using a monorepo"
